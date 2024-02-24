@@ -1,0 +1,73 @@
+<!-- share prototypes here -->
+<a href="javascript:history.back()">
+    <button style="background-color: red; color: white;">Back to Home</button>
+</a>
+
+<style>
+    .contents {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+    .content {
+        text-align: center;
+        margin: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .subheader {
+        text-align:left;
+        margin: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<section class="contents">
+    <div class="content">
+        <header>
+            Core Gameplay Prototype from Sprint 2
+        </header>
+
+        <h1>Laser Pointer Tool Implementation and Hand Management</h1>
+        <div class="subheader">
+            <h2>Design Questions Asked</h2>
+            <ul>
+                <li>How should the laser pointer be visualized within the game scene? How should the player control the location of the laser?</li>
+                <li>How should the player be able to access/move bills across the screen?</li>
+                <li>How should the player be able to switch between their different tools? Should the player be able to move bills always, or only when their hand is empty?</li>
+                <li>If we do want the player to only be able to move bills while their hand is empty, how do we want to go about switching between different tools? How might it be best to visually convey that tools have been switched?</li>
+            </ul>
+        </div>
+            
+            
+        <div class="subheader">
+            <h2>Visual Evidence</h2>
+            <img style="display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://cdn.discordapp.com/attachments/1195224796045262948/1210790424969482311/Screen_Shot_2024-02-23_at_7.26.37_PM.png?ex=65ebd774&amp;is=65d96274&amp;hm=1253af88b3cd3acf6969f532400cafad7896e169b2be7b2d1b1193fd442d5619&amp;">
+            <img style="display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://cdn.discordapp.com/attachments/1195224796045262948/1210790425242107934/Screen_Shot_2024-02-23_at_7.26.48_PM.png?ex=65ebd774&amp;is=65d96274&amp;hm=c14b1d621f62109ce7bb435c29a4eeb2d540adf80608b4c50f9ad84bd915815b&amp;">
+            <img style="display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://cdn.discordapp.com/attachments/1195224796045262948/1210790425489707098/Screen_Shot_2024-02-23_at_7.26.53_PM.png?ex=65ebd774&amp;is=65d96274&amp;hm=1ec42ed29fe093d08a12ac39703b2f279b4abf0381b5611c7a188e60a8e3b4ad&amp;">
+        </div>
+
+        <div class="subheader">
+            <h2>Description</h2>
+            <br>
+            <p>After setting up the primary game scene by importing and placing most of the relevant 3D assets into the Unity scene editor, we prototyped one of the main core gameplay mechanics, this involving the usage of the laser pointer, and the ability to move bills across the president’s desk. For the laser pointer, the player has the ability to turn it off and on by right clicking on the screen, and when the laser pointer is on, a line renderer is created and draws a line from just below the camera view to wherever the mouse is located on the screen and collides with an object via a raycast. If the laser pointer is determined to be colliding with the president’s desk or any of the objects atop it, it also creates a laser dot at the end of the laser pointer to make it a bit more clear to visually indicate where exactly the laser is on the desk aside from the mouse location on the screen. In terms of the bill management, when the player does not have the laser pointer equipped they are able to click on the stack of bills on the left side of the desk to spawn in a new bill for them to either pass/veto, and they can then click on the organizer to get rid of that bill and spawn in a new one. In order to swap between these two current player abilities, they can utilize the scroll wheel, which disables/enables the next “tool” in the list of the player's available actions.</p>
+        </div>
+
+        <div class="subheader">
+            <h2>Knowledge Gained</h2>
+            <p>Originally, when working on the bill management, we created a drag-and-drop script so that the player could click on the bill and then drag it to whatever location on the desk they wished to. However, doing so in a 3D space using the mouse and a fixed camera perspective was a bit difficult, specifically in allowing for the player to have more control over moving the bill closer or further from the camera. So, we instead opted to have the bill “teleport” to a set location on the desk when the player interacts with a specific item instead. 
+                This process was when we first learned about raycasting in Unity, specifically from the camera to the mouse location on the screen to check for any collisions and allow for player interactions in a 3D space using the mouse.
+                When working on the laser pointer, we learned about the Line Renderer game object in Unity, which allows for one to draw lines in a 3D space. This made it much easier for us to translate raycasts from the camera to the mouse location into a visible line for the player to see. We also learned how to create an empty game object through C# scripting and add a Line Renderer component to it, rather than having the script reference an existing object within the scene already.
+                In creating the tool swapping mechanic, we figured out how to access the “children” objects of objects in Unity. As we have this mechanic set up, we have a script attached to a main object, with each tool attached to their own object as a child to this main object. In this way, the main tool manager swaps which child object and subsequent tool script is active based on player scroll wheel inputs.
+                In the process, we also figured out how to create subclasses. Both the bill movement and laser pointer are both made into subclasses of a main “Tool” class, which made it easier for other scripts to address general tool functionalities without needing to know every single individual class for each tool.</p>
+        </div>
+    </div>
+</section>
