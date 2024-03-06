@@ -48,11 +48,34 @@
     <h3>How we designed this game to fit externally imposed constraints:
         <ul>
             <li>Accessibility</li>
-                <p>Our game is suitable for people with hearing impairments since it can be played without any audio</p>
+                <li>Limited Vision (Seeing)
+                    Your game must be completable even when simulating vision limitations: contrast and color sensitivity.
+                    <p>Our game does use color distinctions at the moment, however it will also include UI symbols to differentiate such as a dead fish or a bone.</p>
+                </li>
+                <li>
+                    Limited Dexterity (Touching)
+                    Your game must be completable by a player using just one hand on the controls at a time. You may require multi-button mouse, multi-finger touchscreen gestures, or multi-key keyboard gestures, but you are encouraged to keep the core controls of your game very very simple.
+                    <p>Our game can be played with just pressing the arrow keys and the trackpad, or using the mouse, which all can be done with one hand</p>
+                </li> 
+                    Limited Audition (Hearing)
+                    Your game must be completable by a player who cannot hear any sounds from the game (e.g. playing the game with system audio muted). Sonic art is an appreciated aspect of design polish (and it can help reinforce feedback provided by the game's graphics). However, for this inclusive design requirement, auditory feedback cannot required for the player to complete the game.
+                    <p>Our game is suitable for people with hearing impairments since it can be played without any audio</p>
+                <li>
+                    Limited Energy and Attention (Resting)
+                    During a completion run of your game, gameplay should always reach a natural resting point within two minutes of active play without the player needing to take an extra action to pause the game. (The player may still face intense encounters, but they should somehow resolve or get to a situation where it is safe to let go of the controls quickly.)
+                    <p>The player can let go of the controls at any time during the two minute active play time without any punishments.</p>
+                </li>
+               
             <li>Localization</li>
-                <p>We have a language select screen that supports English and Mandarin</p>
+                <li>Your game must support players two use two different written languages. At least one language must use either a logographic script (e.g. KanjiLinks to an external site.) or a right-to-left script (e.g. ArabicLinks to an external site.).
+                    The ability to localize them game to additional written languages should be supported by your localization kit.</li>
+                <p>We have created an asset string table using Unity's localization settings to support the game text in English and simplified Chinese. Each language settings will be set as a different build.</p>
             <li>Game Format</li>
-                <p>We have committed to delivering a Unity offline game in a Windows/Mac build that supports web browsers. The total download size is under 100Mib.</p>
+                <li>The game must be entirely completable while the player's device is disconnected from the internet.
+                    The total data transfer involved in downloading the game must be less than 100 MiB.
+                    The game may target the platform of the team's choice (e.g. desktop, mobile, console, browser, etc.). 
+                </li>
+                <p>We have committed to delivering a Unity offline game for desktop platforms with a Windows/Mac build that supports web browsers. The total download size is under 100Mib.</p>
         </ul>
     </h3>
 
@@ -122,10 +145,10 @@
                 <li>Abraham Halim: programmed the focus radii of the cat and implemented localization</li>
                 <li>Autumn Plaxco: programmed the laser pointer functionality and deployed builds on Github Pages</li>
                 <li>Daniel Gonzalez: created all 3D meshes, textures, and UI assets</li>
-                <li>Dexter Zhang: designed the tutorial intro and tool swapping interface</li>
-                <li>Evan Oliveras: composed several sound effects for stamping, collisions, and voiceovers</li>
+                <li>Dexter Zhang: designed the tutorial level and tool swapping interface</li>
+                <li>Evan Oliveras: composed several sound effects for stamping, tools, and voiceovers</li>
                 <li>Justin Hu: programmed and implemented the core bill organizing system</li>
-                <li>Kirsten Lindblad: lead the team through tasks, created shader art, and programmed the cat's movement</li>
+                <li>Kirsten Lindblad: lead the team through tasks, created shader art for paw prints and dust particles, and programmed the cat's movement</li>
                 <li>Michael Law: updated design documents and prototyped design features</li>
                 <li>Samip Niraula: implemented the pause menu and experimented with data compression</li>
                 <li>Samuel Zhang: implemented the main and settings menu, controls, timer, and created this website that you are reading right now</li>
