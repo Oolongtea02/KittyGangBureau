@@ -58,7 +58,7 @@
         <div class="subheader">
             <h2>Description</h2>
             <br>
-            <p>After setting up the primary game scene by importing and placing most of the relevant 3D assets into the Unity scene editor, we prototyped one of the main core gameplay mechanics, this involving the usage of the laser pointer, and the ability to move bills across the president’s desk. For the laser pointer, the player has the ability to turn it off and on by right clicking on the screen, and when the laser pointer is on, a line renderer is created and draws a line from just below the camera view to wherever the mouse is located on the screen and collides with an object via a raycast. If the laser pointer is determined to be colliding with the president’s desk or any of the objects atop it, it also creates a laser dot at the end of the laser pointer to make it a bit more clear to visually indicate where exactly the laser is on the desk aside from the mouse location on the screen. In terms of the bill management, when the player does not have the laser pointer equipped they are able to click on the stack of bills on the left side of the desk to spawn in a new bill for them to either pass/veto, and they can then click on the organizer to get rid of that bill and spawn in a new one. In order to swap between these two current player abilities, they can utilize the scroll wheel, which disables/enables the next “tool” in the list of the player's available actions.</p>
+            <p>After setting up the primary game scene by importing and placing most of the relevant 3D assets into the Unity scene editor, we prototyped one of the main core gameplay mechanics, this involving the usage of the laser pointer, and the ability to move bills across the president's desk. For the laser pointer, the player has the ability to turn it off and on by right clicking on the screen, and when the laser pointer is on, a line renderer is created and draws a line from just below the camera view to wherever the mouse is located on the screen and collides with an object via a raycast. If the laser pointer is determined to be colliding with the president's desk or any of the objects atop it, it also creates a laser dot at the end of the laser pointer to make it a bit more clear to visually indicate where exactly the laser is on the desk aside from the mouse location on the screen. In terms of the bill management, when the player does not have the laser pointer equipped they are able to click on the stack of bills on the left side of the desk to spawn in a new bill for them to either pass/veto, and they can then click on the organizer to get rid of that bill and spawn in a new one. In order to swap between these two current player abilities, they can utilize the scroll wheel, which disables/enables the next “tool” in the list of the player's available actions.</p>
         </div>
 
         <div class="subheader">
@@ -68,6 +68,46 @@
                 When working on the laser pointer, we learned about the Line Renderer game object in Unity, which allows for one to draw lines in a 3D space. This made it much easier for us to translate raycasts from the camera to the mouse location into a visible line for the player to see. We also learned how to create an empty game object through C# scripting and add a Line Renderer component to it, rather than having the script reference an existing object within the scene already.
                 In creating the tool swapping mechanic, we figured out how to access the “children” objects of objects in Unity. As we have this mechanic set up, we have a script attached to a main object, with each tool attached to their own object as a child to this main object. In this way, the main tool manager swaps which child object and subsequent tool script is active based on player scroll wheel inputs.
                 In the process, we also figured out how to create subclasses. Both the bill movement and laser pointer are both made into subclasses of a main “Tool” class, which made it easier for other scripts to address general tool functionalities without needing to know every single individual class for each tool.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contents">
+    <div class="content">
+        <header>
+            Core Gameplay Prototype from Sprint 2
+        </header>
+
+        <h1>Live Cat Focus Prototype (IRL Playtest V2)</h1>
+        <div class="subheader">
+            <h2>Design Questions Asked</h2>
+            <ul>
+                <li>Is there any information we can gleam from another more focused in person playtest?</li>
+                <li>How do we want to incorporate “randomness” in physical playtests that would be part of the actual digital game?</li>
+                <li>How do we want the cat's attention/focus to be determined in game? How accurate should the cat be when trying to hit the laser pointer?</li>
+            </ul>
+        </div>
+
+        <div class="subheader">
+            <h2>Visual Evidence</h2>
+            <img style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://media.discordapp.net/attachments/1195224796045262948/1215181568805568552/Screen_Shot_2024-03-06_at_10.14.14_PM.png?ex=65fbd106&amp;is=65e95c06&amp;hm=7f70dcdad05ab585eb1cf30f1bc95722184b661da89f853e2f03ebd8b32ffa32&amp;=&amp;format=webp&amp;quality=lossless&amp;width=1666&amp;height=921" width="1109" height="613">
+            <img style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://cdn.discordapp.com/attachments/1195224796045262948/1215181568314843156/Screen_Shot_2024-03-06_at_10.14.22_PM.png?ex=65fbd106&amp;is=65e95c06&amp;hm=939b56a52dbd775bdb11b5c267bb3c55dc1b3975e061099ba39a453f80be95f0&amp;" width="951" height="834">
+            <img style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://cdn.discordapp.com/attachments/1195224796045262948/1215181567916245112/Screen_Shot_2024-03-06_at_10.14.30_PM.png?ex=65fbd106&amp;is=65e95c06&amp;hm=07295124a1041df85dc5604821a007f40da80dbaf5581b5af66d0bb76a263003&amp;" width="784" height="834">
+        </div>
+
+        <div class="subheader">
+            <h2>Description</h2>
+            <br>
+            <p>One person is designated as “cat” and this cat is blindfolded, spun around and handed a marker. One person is designated as the player and one more is designated as a distractor/antagonist. The player will throw ping pong balls at points of the table to get the “cat's” attention to mark a designated space on the table. The distraction will similarly be throwing ping pong balls to get the cat to not mark the designated space. This game goes on until the space is marked by the cat.</p>
+        </div>
+
+        <div class="subheader">
+            <h2>Knowledge Gained</h2>
+            <p>Most if not all the knowledge here more functioned as suggestions for AI
+                Noticed “cat's” will strike the same place over and over again, could be interesting to make the cat ai be weighted to strike similar locations over and over again
+                Was hard to get the “cat” to hit a sound far away from them, some mixture of requiring more effort and less certainty due to distance, could make this a feature and could be perceived as cats are “lazy” and will be more fickle to flick across the desk
+                Despite only having one kind of interaction with the “cat”, players found it pretty fun, some mixture of the chaos and absurdity of the situation seemed to carry the positive feeling alongside this kind of “training/leading” of the cat was found enjoyable. 
+            </p>
         </div>
     </div>
 </section>
