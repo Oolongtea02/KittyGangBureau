@@ -89,20 +89,22 @@
         <ul>
                 <li>Limited Vision (Seeing)
                     Your game must be completable even when simulating vision limitations: contrast and color sensitivity.
-                    <p>Our game does use color distinctions at the moment, however it will also include UI symbols to differentiate such as a dead fish or a bone.</p>
+                    <p>For any aspect of the game that relies on color distinctions, namely the red and green colors used for passing or vetoing bills, we have added additional symbolic distinctions to ensure that color is not the only determining factor for specific visual elements, ensuring that even players with certain visual limitations are able to play the game. For example, the red and green stamp pads for passing/vetoing bills also have an additional checkmark symbol or X symbol on them to make them visually distinct from one another via methods not only relying on color.</p>
                 </li>
                 <li>
                     Limited Dexterity (Touching)
                     Your game must be completable by a player using just one hand on the controls at a time. You may require multi-button mouse, multi-finger touchscreen gestures, or multi-key keyboard gestures, but you are encouraged to keep the core controls of your game very very simple.
                     <p>Our game can be played with just pressing the arrow keys and the trackpad, or using the mouse, which all can be done with one hand.</p>
                 </li> 
+                <li>
                     Limited Audition (Hearing)
                     Your game must be completable by a player who cannot hear any sounds from the game (e.g. playing the game with system audio muted). Sonic art is an appreciated aspect of design polish (and it can help reinforce feedback provided by the game's graphics). However, for this inclusive design requirement, auditory feedback cannot required for the player to complete the game.
-                    <p>Our game is suitable for people with hearing impairments since it can be played without any audio.</p>
+                    <p>Our game is suitable for people with hearing impairments since it can be played without any audio. All of the audio elements currently implemented do not serve to indicate any on-screen events that cannot be seen visually, rather they serve more as auditory polish to add onto pre-existing functional systems.</p>
+                </li>
                 <li>
                     Limited Energy and Attention (Resting)
                     During a completion run of your game, gameplay should always reach a natural resting point within two minutes of active play without the player needing to take an extra action to pause the game. (The player may still face intense encounters, but they should somehow resolve or get to a situation where it is safe to let go of the controls quickly.)
-                    <p>The player can let go of the controls at any time during the two minute active play time without any punishments.</p>
+                    <p>For each major segment of gameplay, there is a 2-minute timer during which the player can play the game for a short burst of time, and when that 2 minutes runs out, they are taken to a menu to review what they completed during that gameplay segment and rest for any period of time before they chose to continue onwards.</p>
                 </li>
             </ul>
                
@@ -110,7 +112,7 @@
             <ul>
                 <li>Your game must support players two use two different written languages. At least one language must use either a logographic script (e.g. KanjiLinks to an external site.) or a right-to-left script (e.g. ArabicLinks to an external site.).
                     The ability to localize them game to additional written languages should be supported by your localization kit.</li>
-                <p>We have created an asset string table using Unity's localization settings to support the game text in English and simplified Chinese. Each language settings will be set as a different build.</p>
+                <p>We have created an asset string table using Unity's localization settings to support the game text in both English and simplified Chinese. For visual assets using text, we have also created multiple versions of each art asset in both English and Chinese which are each implemented within the game. Each of the language settings will be set up as a different build available for download.</p>
             </ul>
             <h4>Game Format</h4>
             <ul>
@@ -118,7 +120,7 @@
                     The total data transfer involved in downloading the game must be less than 100 MiB.
                     The game may target the platform of the team's choice (e.g. desktop, mobile, console, browser, etc.). 
                 </li>
-                <p>We have committed to delivering a Unity offline game for desktop platforms with a Windows/Mac build that supports web browsers. The total download size is under 100Mib.</p>
+                <p>We have committed to delivering a Unity offline game for desktop platforms with a Windows/Mac build. The total download size of each compressed build is under 100Mib, around 30Mib each. Optionally, the WebGL build of the game can be played via a desktop browser at our associated GitHub pages or itch.io link without the need for any additional downloads.</p>
             </ul>
     </h3>
 
